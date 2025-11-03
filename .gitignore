@@ -5,9 +5,7 @@
 *.tfstate
 *.tfstate.*
 
-# Arquivos de variáveis com dados sensíveis
-terraform.tfvars
-*.auto.tfvars
+
 
 # Credenciais
 *.pem
