@@ -1,0 +1,28 @@
+# Terraform local files
+*.tfstate
+*.tfstate.*
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Arquivos de variáveis com dados sensíveis
+terraform.tfvars
+*.auto.tfvars
+
+# Credenciais
+*.pem
+*.key
+
+# Logs e cache
+*.log
+*.backup
+*.swp
+
+# IDEs / editores
+.vscode/
+.idea/
+*.iml
+
+# Outros temporários do sistema
+.DS_Store
+Thumbs.db
