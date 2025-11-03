@@ -13,32 +13,29 @@ resource "aws_security_group" "web_sg" {
   name        = "${var.project}-${var.environment}-sg"
   description = "Security group para acesso SSH e HTTP"
 
-  ingress = [
-    {
-      description      = "SSH"
-      from_port        = 22
-      to_port          = 22
-      protocol         = "tcp"
-      cidr_blocks      = [var.ssh_cidr]
-    },
-    {
-      description      = "HTTP"
-      from_port        = 80
-      to_port          = 80
-      protocol         = "tcp"
-      cidr_blocks      = [var.http_cidr]
-    }
-  ]
+  ingress {
+  description = "SSH"
+  from_port   = 22
+  to_port     = 22
+  protocol    = "tcp"
+  cidr_blocks = [var.ssh_cidr]
+}
 
-  egress = [
-    {
-      description      = "Outbound"
-      from_port        = 0
-      to_port          = 0
-      protocol         = "-1"
-      cidr_blocks      = ["0.0.0.0/0"]
-    }
-  ]
+ingress {
+  description = "HTTP"
+  from_port   = 80
+  to_port     = 80
+  protocol    = "tcp"
+  cidr_blocks = [var.http_cidr]
+}
+
+egress {
+  description = "Outbound"
+  from_port   = 0
+  to_port     = 0
+  protocol    = "-1"
+  cidr_blocks = ["0.0.0.0/0"]
+}
 
   tags = {
     Project     = var.project
