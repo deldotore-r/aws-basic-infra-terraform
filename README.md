@@ -169,16 +169,3 @@ terraform destroy
 
 ---
 
-## Sugestão de organização dos prints
-
-```
-prints/
-├─ terraform-init.png
-├─ terraform-validate.png
-├─ terraform-plan.png
-├─ terraform-apply.png
-├─ terraform-outputs.png
-└─ terraform-destroy.png
-```
-
-Isso mantém o README limpo e o projeto organizado para avaliação ou divulgação.
